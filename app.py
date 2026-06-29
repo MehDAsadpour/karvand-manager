@@ -73,9 +73,63 @@ def show(data_karvands):
                 print(f"Skills: {skill['name']}  Level: {skill['level']}  Score: {skill['score']}")
         print("---------------------------------------------------")
 
+def search_id(data_karvands):
+    id=int(input("Enter user's ID: "))
+    found=True
+    print("RESULTS:")
+    for item in data_karvands['karvands']:
+        if item['id']==id:
+            print(f"\n#{item['id']}\n{item['full_name']}\n"
+                f"city : {item['city']}\n"
+                f"email : {item['email']}\n"
+                f"field : {item['education']['field']}\n"
+                f"degree : {item['education']['degree']}")
+            for skill in item['skills']:
+                print(f"Skills: {skill['name']}  Level: {skill['level']}  Score: {skill['score']}")
+            found=False
+            break 
+    if found:
+        print("!!! ID Not founded !!!")   
+
+def search_skill(data_karvands):
+    s=input("Enter skill name: ")
+    found=True
+    print("RESULTS:")
+    for item in data_karvands['karvands']:
+        for skill in item['skills']:
+            if s==skill['name']:
+                print(f"\n{item['id']}. {item['full_name']}\n"
+                      f"{skill['name']}  Level: {skill['level']}  Score: {skill['score']}")
+                print("---------------------------------------------------")
+                found=False
+                break
+    if found:
+        print("!!! Skill not founded !!!")
 
 data_karvands=load_karvand()
-
-add(data_karvands)
-show(data_karvands)
-
+msg="""
+1.Add
+2.Show list
+3.Search by ID
+4.Search by skills
+.
+.
+.
+8.Exit
+"""
+running=True
+while running:
+    print(msg)
+    c=int(input("choose: "))
+    if c==8:
+        break
+    elif c==1:
+        add(data_karvands)
+    elif c==2:
+        show(data_karvands)
+    elif c==3:
+        search_id(data_karvands)
+    elif c==4:
+        search_skill(data_karvands)
+    else:
+        print("Invalid input.Try again")
