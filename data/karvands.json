@@ -3,45 +3,5 @@
         "title": "karvand python",
         "year": 2026
     },
-    "karvands": [
-        {
-            "id": 1,
-            "full_name": "Mehdi",
-            "city": "Isfahan",
-            "email": "asadpour@gmail.com",
-            "education": {
-                "degree": "Bachelor",
-                "field": "Computer engineering"
-            },
-            "skills": [
-                {
-                    "name": "Python",
-                    "level": "Intermediate",
-                    "score": 70
-                },
-                {
-                    "name": "Git",
-                    "level": "Intermediate",
-                    "score": 65
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "full_name": "Ali",
-            "city": "Tehran",
-            "email": "ali.dev@gmail.com",
-            "education": {
-                "degree": "Bachelor",
-                "field": "Chemical engineering"
-            },
-            "skills": [
-                {
-                    "name": "Python",
-                    "level": "Intermediate",
-                    "score": 80
-                }
-            ]
-        }
-    ]
+    "karvands": []
 }
